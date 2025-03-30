@@ -30,20 +30,17 @@ const JobFinderScreen = ({ navigation }: any) => {
   }, []);
 
   const handleSaveJob = (job: any) => {
-    const companyName = job.company || 'Unknown Company'; // Fallback value for company name
+    const companyName = job.company || 'Unknown Company'; 
   
     if (!savedJobs.some((savedJob) => savedJob.id === job.id)) {
-      // Save the job if not already saved
       saveJob(job);
   
-      // Show success toast
       Toast.show({
         type: 'success',
         text1: 'Job has been saved!',
         text2: `${job.title} at ${companyName} has been added to your saved jobs.`,
       });
     } else {
-      // Show error toast if the job is already saved
       Toast.show({
         type: 'error',
         text1: 'This job is already saved.',
@@ -94,13 +91,11 @@ const JobFinderScreen = ({ navigation }: any) => {
         )}
       />
 
-      {/* Bottom Navigation with Dark Mode Toggle in the Center */}
       <View style={[styles.bottomNav, isDarkMode && styles.darkBottomNav]}>
         <TouchableOpacity onPress={() => navigation.navigate('JobFinder')}>
           <Ionicons name="briefcase-outline" size={32} color={isDarkMode ? '#ccc' : '#555'} />
         </TouchableOpacity>
 
-        {/* Dark Mode Toggle Centered */}
         <DarkModeToggle />
 
         <TouchableOpacity onPress={() => navigation.navigate('SavedJobs')}>
@@ -108,7 +103,6 @@ const JobFinderScreen = ({ navigation }: any) => {
         </TouchableOpacity>
       </View>
 
-      {/* Toast Container */}
       <Toast />
     </View>
   );

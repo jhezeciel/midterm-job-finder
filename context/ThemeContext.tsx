@@ -1,15 +1,12 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
-// Define Context Types
 interface ThemeContextType {
   isDarkMode: boolean;
   toggleTheme: () => void;
 }
 
-// Create Context
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-// Provide Context
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -24,7 +21,6 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Custom Hook
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (!context) {

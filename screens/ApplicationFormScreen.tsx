@@ -21,7 +21,6 @@ const ApplicationForm = ({ navigation, route }: any) => {
     reason: '',
   });
 
-  // Email and Contact Number Validation
   const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
   const validateContact = (number: string) => /^[0-9]{10,15}$/.test(number);
 
@@ -34,7 +33,6 @@ const ApplicationForm = ({ navigation, route }: any) => {
     let isValid = true;
     const newErrors = { name: '', email: '', contactNumber: '', reason: '' };
 
-    // Validation Checks
     if (!formData.name) {
       newErrors.name = 'Name is required.';
       isValid = false;
@@ -60,7 +58,6 @@ const ApplicationForm = ({ navigation, route }: any) => {
       return;
     }
 
-    // Show Alert and Navigate Directly to JobFinderScreen
     Alert.alert('Success', 'Your application has been submitted!', [
       {
         text: 'OK',
@@ -79,7 +76,6 @@ const ApplicationForm = ({ navigation, route }: any) => {
         <DarkModeToggle />
       </View>
 
-      {/* Form Section */}
       <ScrollView contentContainerStyle={styles.form}>
         {[
           { label: 'Full Name', field: 'name', placeholder: 'Enter your name', isLarge: false },
@@ -101,7 +97,6 @@ const ApplicationForm = ({ navigation, route }: any) => {
           </View>
         ))}
 
-        {/* Submit Button */}
         <TouchableOpacity onPress={handleSubmit} style={styles.button}>
           <Text style={styles.buttonText}>Submit Application</Text>
         </TouchableOpacity>
