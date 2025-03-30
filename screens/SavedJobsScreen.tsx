@@ -11,13 +11,11 @@ const SavedJobsScreen = ({ navigation }: any) => {
 
   return (
     <View style={[styles.container, isDarkMode && styles.darkContainer]}>
-      {/* Header Section */}
       <View style={[styles.curvedSection, isDarkMode && styles.darkCurvedSection]}>
         <Text style={styles.title}>Saved Jobs</Text>
         <DarkModeToggle />
       </View>
 
-      {/* Display Saved Jobs */}
       {savedJobs.length === 0 ? (
         <Text style={[styles.emptyText, isDarkMode && styles.darkText]}>No saved jobs yet.</Text>
       ) : (
@@ -30,7 +28,7 @@ const SavedJobsScreen = ({ navigation }: any) => {
                 job={item}
                 onApply={() => navigation.navigate('ApplicationForm', { job: item })}
                 onRemove={() => removeJob(item.id)}
-                isDarkMode={isDarkMode} // Pass the isDarkMode prop
+                isDarkMode={isDarkMode} 
               />
             ) : null
           }
@@ -38,7 +36,6 @@ const SavedJobsScreen = ({ navigation }: any) => {
         />
       )}
 
-      {/* Find Job Button */}
       <TouchableOpacity
         style={[styles.findJobButton, isDarkMode && styles.darkFindJobButton]}
         onPress={() => navigation.reset({ index: 0, routes: [{ name: 'JobFinder' }] })}

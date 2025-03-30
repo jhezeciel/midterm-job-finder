@@ -102,12 +102,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   applyButton: {
-    backgroundColor: '#333',  // Light Gray
-    borderColor: '#D3D3D3',  // Light Gray
+    backgroundColor: '#333',  
+    borderColor: '#D3D3D3',  
   },
   removeButton: {
-    backgroundColor: 'rgba(255, 77, 77, 0.2)',  // Light Transparent Red
-    borderColor: '#FF4D4D',  // Red border to match transparency
+    backgroundColor: 'rgba(255, 77, 77, 0.2)', 
+    borderColor: '#FF4D4D',  
   },
   buttonText: {
     color: '#fff',
